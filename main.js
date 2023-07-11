@@ -1,5 +1,5 @@
 let correct;
-let seconds = 120;
+let seconds = 30;
 let correctAnswer = 0;
 let incorrectAnswer = 0;
 function getElement(id) {
@@ -51,18 +51,34 @@ function check() {
     main();
 }
 function finish() {
-    clearInterval(checkInterval);
-    let percentage = Math.round(correctAnswer / (incorrectAnswer + correctAnswer) * 100);
     let resultForAnswers;
-    if (percentage >= 75) {
-        resultForAnswers = "gerazanc"
+    clearInterval(checkInterval);
+    getElement("alert").style.display = "block";
+    getElement("card").style.display = "none";
+    getElement("alertscore").innerHTML = correctAnswer;
+    let percentage = Math.round(correctAnswer / (incorrectAnswer + correctAnswer) * 100);
+    if (isNaN(percentage)) {
+        resultForAnswers = Nothing;
     }
-    // else if (){
-
-    // }
-    getElement("alertaccuracy").innerHTML = `duq cucaberel eq ${resultForAnswers} ardyunq `;
+    else {
+        if (percentage >= 75 && percentage < 95) {
+            resultForAnswers = "Good"
+        }
+        else if (percentage >= 95) {
+            resultForAnswers = "Excellent"
+        }
+        else if (percentage >= 15) {
+            resultForAnswers = "Bad"
+        }
+        else{
+            resultForAnswers = "Very Bad"
+        }
+    }
+    getElement("alertscore1").innerHTML = `You have shown ${resultForAnswers} Result `;
 }
-
+function refresh(){
+    location = location
+}
 let checkInterval = setInterval(check, 50);
 main();
 timer();

@@ -12,7 +12,7 @@
 <body>
     <section class="card" id="card">
         <section class="infobar">
-            <div class="score">Accuracy: <span id="alertaccuracy"></span></div>
+            <div class="score">Result: <span id="alertaccuracy"></span></div>
         </section>
         <section class="infobar">
             <div class="score">Score: <span id="score">0</span></div>
@@ -41,6 +41,12 @@
                 </div>
             </section>
         </div>
+    </section>
+    <section id="alert" class="card">
+        <div class="alerttext">Score: <span id="alertscore"></span></div>
+        <div class="alerttext">Result: <span id="alertscore1"></span></div>
+        <br>
+        <button onclick="refresh()" class="button">Restart</button>
     </section>
     <script src = "models.js"></script>
     <script src='main.js'></script>
